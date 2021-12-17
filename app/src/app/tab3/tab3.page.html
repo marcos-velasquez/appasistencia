@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title color="light" size="small"> HISTORIAL </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="mt-5">
+    <ion-item color="primary" class="text-center">
+      <ion-label class="text-center">SELECCIONAR FECHA</ion-label>
+      <ion-datetime displayFormat="MM DD YYYY" (ionChange)="getAssistance($event)"></ion-datetime>
+    </ion-item>
+
+    <ng-container *ngIf="assistance">
+      <ion-item *ngFor="let register of assistance.register">
+        <ion-label>
+          <h2>{{register.subsidiary.name}}</h2>
+          <h3>{{register.type}}</h3>
+          <p>{{register.date | date:'short'}}</p>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>

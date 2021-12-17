@@ -1,0 +1,29 @@
+<div mat-dialog-content>
+  <h1 mat-dialog-title>
+    <i class="fas fa-store-slash"></i>
+    Deshabilitadas
+  </h1>
+
+  <div class="text-center pl-3 pr-3">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput (keyup)="filter($event)" />
+    </mat-form-field>
+  </div>
+
+  <mat-list>
+    <mat-list-item *ngFor="let subsidiary of subsidiaries">
+      <h3 matLine>{{ subsidiary.name }}</h3>
+
+      <div class="space-x-4">
+        <button mat-raised-button color="primary" (click)="restore(subsidiary)">Restaurar</button>
+        <button mat-raised-button color="warn" (click)="remove(subsidiary)">Eliminar</button>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+  <button class="absolute top-0 right-4 rounded-full bg-red-600 text-white text-lg h-8 w-8 font-bold" (click)="close()">
+    X
+  </button>
+</div>

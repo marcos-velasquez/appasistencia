@@ -1,0 +1,6 @@
+export enum CurrentType {
+  OFFICE_START = 'ENTRADA',
+  LUNCH_START = 'INICIO DE ALMUERZO',
+  LUNCH_END = 'FIN DE ALMUERZO',
+  OFFICE_END = 'SALIDA',
+}

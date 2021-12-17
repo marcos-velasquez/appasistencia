@@ -1,0 +1,16 @@
+.mat-paginator-container {
+  @apply bg-yellow-600 text-white font-semibold sticky bottom-0;
+}
+
+th.mat-header-cell {
+  @apply bg-yellow-600 text-white font-semibold sticky top-0;
+}
+
+tr:nth-child(even) {
+  @apply bg-gray-100;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  text-align: center !important;
+}

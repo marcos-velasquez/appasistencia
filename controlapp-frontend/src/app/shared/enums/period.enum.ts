@@ -1,0 +1,9 @@
+export enum Period {
+  ALL = 'TODOS',
+  TODAY = 'HOY',
+  WEEKLY = 'SEMANAL',
+  BIWEEKLY = 'QUINCENAL',
+  MONTHLY = 'MENSUAL',
+  YEARLY = 'ANUAL',
+  CUSTOM = 'PERSONALIZADO',
+}

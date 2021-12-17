@@ -1,0 +1,6 @@
+{
+  "appId": "app.asistencias",
+  "appName": "App Asistencias",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

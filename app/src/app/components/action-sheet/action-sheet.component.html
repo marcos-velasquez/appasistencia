@@ -1,0 +1,15 @@
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button color="secondary">
+    <ion-icon name="grid-outline"></ion-icon>
+  </ion-fab-button>
+
+  <ion-fab-list side="start">
+    <ion-fab-button color="danger" (click)="logout()">
+      <ion-icon name="exit-outline"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-button (click)="changePassword()">
+      <ion-icon name="bag-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

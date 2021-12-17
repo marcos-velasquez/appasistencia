@@ -1,0 +1,47 @@
+<div mat-dialog-content>
+  <h1 mat-dialog-title>
+    <i class="fas fa-edit"></i>
+    Editar Sucursal
+  </h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="address" readonly (click)="googleMapsDialog()" />
+      <mat-error *ngIf="form.get('address').hasError('required')">Campo requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="form.get('name').hasError('required')">Campo requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Zona</mat-label>
+      <mat-select formControlName="zone">
+        <mat-option *ngFor="let zone of zones" [value]="zone._id">
+          {{ zone.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('zone').hasError('required')"> Zona es Requerida </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>№ del local</mat-label>
+      <input matInput formControlName="number" />
+      <mat-error *ngIf="form.get('number').hasError('required')">Campo requerido</mat-error>
+      <mat-error *ngIf="form.get('number').hasError('pattern')">Formato inválido</mat-error>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="warn" type="button" (click)="close()">
+        <i class="fas fa-times-circle"></i>
+        Cancelar
+      </button>
+      <button mat-raised-button color="primary">
+        <i class="fas fa-save"></i>
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

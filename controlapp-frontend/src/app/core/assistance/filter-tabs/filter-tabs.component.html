@@ -1,0 +1,19 @@
+<div class="mt-3">
+  <mat-tab-group>
+    <mat-tab label="Global">
+      <app-global-filter (onSelected)="onSelectedFilterByGlobal($event)"></app-global-filter>
+    </mat-tab>
+
+    <mat-tab label="Sucursal">
+      <app-subisidiary-filter (onSelected)="onSelectedFilterBySubsidiary($event)"></app-subisidiary-filter>
+    </mat-tab>
+
+    <mat-tab label="Usuario">
+      <app-user-filter (onSelected)="onSelectedFilterByUser($event)"></app-user-filter>
+    </mat-tab>
+
+    <mat-tab label="Zona">
+      <app-zone-filter (onSelected)="onSelectedFilterByZone($event)"></app-zone-filter>
+    </mat-tab>
+  </mat-tab-group>
+</div>

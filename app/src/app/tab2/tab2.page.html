@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title color="light" size="small"> ASISTENCIAS </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header class="text-center">
+      <ion-label>SUCURSALES</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let subsidiary of subsidiaries" detail (click)="tracing(subsidiary)">
+      <ion-label>
+        <h2>{{subsidiary.name}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

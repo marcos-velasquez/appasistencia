@@ -1,0 +1,33 @@
+<section class="max-w-screen-lg mx-auto">
+  <div class="text-center my-10">
+    <button (click)="generateReport()" mat-raised-button color="primary" [disabled]="!hasAssistances">
+      Generar Reporte
+    </button>
+  </div>
+
+  <app-table [dataDisplay]="dataDisplay" [data]="_assistances">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rut">
+      <th mat-header-cell *matHeaderCellDef>Rut</th>
+      <td mat-cell *matCellDef="let element">{{ element.rut }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="register">
+      <th mat-header-cell *matHeaderCellDef>Registro</th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngFor="let register of element.register">
+          <p class="flex justify-end items-center text-xs">
+            {{ register.subsidiary.name }} &nbsp; <span class="badge w-auto"> {{ register.type }}</span> &nbsp;
+            {{ register.date | date: "short" }} &nbsp;
+          </p>
+        </div>
+      </td>
+    </ng-container>
+  </app-table>
+</section>

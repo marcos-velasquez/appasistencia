@@ -1,0 +1,8 @@
+<div class="container mt-36">
+  <app-chart-line
+    [lineChartLabels]="labels"
+    [lineChartData]="data"
+    (onYearly)="yearly($event)"
+    (onMonthly)="monthly($event)"
+  ></app-chart-line>
+</div>

@@ -1,0 +1,16 @@
+<section class="mt-32 max-w-lg mx-auto">
+  <app-filter-tabs
+    (onFilterBySubsidiary)="getAssistancesBySubsidiary($event)"
+    (onFilterByUser)="getAssistancesByUser($event)"
+    (onFilterGlobal)="getAssistancesGlobal($event)"
+    (onFilterByZone)="getAssistancesByZone($event)"
+  ></app-filter-tabs>
+</section>
+
+<app-table-assistance [assistances]="assistances"></app-table-assistance>
+
+<div class="text-center mt-5">
+  <button title="Actualizar" mat-icon-button [disabled]="!lastRequest" (click)="refresh()">
+    <i class="fas fa-sync fa-2x text-yellow-600"></i>
+  </button>
+</div>

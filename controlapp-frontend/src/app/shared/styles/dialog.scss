@@ -1,0 +1,15 @@
+.mat-dialog-content {
+  @apply relative min-h-[350px] min-w-[350px];
+}
+
+.mat-dialog-title {
+  @apply font-semibold space-x-2;
+}
+
+.mat-dialog-content form {
+  @apply flex flex-wrap justify-center items-center space-x-2;
+}
+
+.mat-dialog-actions {
+  @apply absolute bottom-6 right-2;
+}

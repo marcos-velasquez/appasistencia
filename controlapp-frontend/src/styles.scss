@@ -1,0 +1,50 @@
+@use "~@angular/material" as mat;
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$blue-palette, 900);
+$my-accent: mat.define-palette(mat.$orange-palette, "A700");
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
+  )
+);
+
+@include mat.all-component-themes($my-theme);
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./app/core/styles.core";
+
+:root {
+  --nav__size: 66px;
+}
+
+@layer base {
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+    @apply text-blue-900 font-bold tracking-wider;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

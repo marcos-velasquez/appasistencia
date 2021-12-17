@@ -1,0 +1,20 @@
+<section class="relative w-52 my-5 mx-auto" *ngIf="hasSearchInput">
+  <input placeholder="*" id="search" (input)="search($event)" class="input__primary peer" />
+  <label for="search" class="label">Buscar</label>
+</section>
+
+<app-toggle-label [dataDisplay]="dataDisplay"></app-toggle-label>
+
+<div class="rounded-lg shadow-lg relative text-gray-600 font-semibold">
+  <table mat-table [dataSource]="dataSource" class="w-full">
+    <ng-content></ng-content>
+
+    <tr mat-header-row *matHeaderRowDef="dataDisplay.active"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataDisplay.active"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="text-center" colspan="20">No se han encontrado resultados!!</td>
+    </tr>
+  </table>
+
+  <mat-paginator class="bg-yellow-600 text-white" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

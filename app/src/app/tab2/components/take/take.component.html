@@ -1,0 +1,18 @@
+<ng-container *ngIf="assistance">
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>REGISTRO</ion-label>
+    </ion-item-divider>
+
+    <ion-item *ngFor="let register of assistance.register">
+      <ion-label>
+        <h2>{{ register.subsidiary.name }}</h2>
+        <h3>{{ register.type }}</h3>
+        <p>{{ register.date | date: "short" }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-item-group>
+  <ion-button expand="full" (click)="take()" color="secondary">
+    <ion-label color="light">{{ type }}</ion-label>
+  </ion-button>
+</ng-container>

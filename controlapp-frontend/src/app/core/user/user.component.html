@@ -1,0 +1,50 @@
+<section class="max-w-screen-lg mx-auto mt-32">
+  <app-table [dataDisplay]="dataDisplay" [data]="users">
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Nombre</th>
+      <td mat-cell *matCellDef="let element">{{ element.first_name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Apellido</th>
+      <td mat-cell *matCellDef="let element">{{ element.last_name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Rol</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.role | rolesToSpanish }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="opciones">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element" class="text-right">
+        <button title="Editar" mat-icon-button (click)="edit(element)">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button title="Deshabilitar" mat-icon-button (click)="disabled(element)">
+          <i class="fas fa-store-slash"></i>
+        </button>
+        <button title="Resetear identificador" mat-icon-button (click)="resetUdid(element)">
+          <i class="fas fa-redo"></i>
+        </button>
+      </td>
+    </ng-container>
+  </app-table>
+
+  <div class="flex justify-center items-center text-white mt-3 space-x-2">
+    <button mat-mini-fab color="accent" title="Nueva" (click)="create()">
+      <i class="fas fa-plus"></i>
+    </button>
+
+    <button mat-mini-fab color="warn" title="Deshabilitadas" (click)="showDisabled()">
+      <i class="fas fa-store-slash"></i>
+    </button>
+  </div>
+</section>

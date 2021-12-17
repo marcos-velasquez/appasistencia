@@ -1,0 +1,8 @@
+<section class="flex justify-center">
+  <div *ngFor="let label of dataDisplay.labels">
+    <button class="badge" (click)="toggle(label)">
+      {{ label }}
+      <i class="fas fa-hand-pointer ml-2 text-gray-100"></i>
+    </button>
+  </div>
+</section>

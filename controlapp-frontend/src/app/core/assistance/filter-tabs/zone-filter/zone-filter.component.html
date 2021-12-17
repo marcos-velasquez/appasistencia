@@ -1,0 +1,11 @@
+<div class="mt-3 text-center relative">
+  <mat-form-field appearance="legacy">
+    <mat-label>Seleccione una zona</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option [value]="zone._id" *ngFor="let zone of zones">{{ zone.name }}</mat-option>
+    </mat-select>
+    <i class="fas fa-map-marker-alt absolute right-0"></i>
+  </mat-form-field>
+</div>
+
+<app-select-period *ngIf="selected" (onRange)="emitRange($event)"></app-select-period>

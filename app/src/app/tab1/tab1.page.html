@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title color="light" size="small"> PERFIL </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row class="py-10 flex flex-col items-center justify-center" *ngIf="user">
+    <label for="file" class="relative">
+      <ion-thumbnail>
+        <ion-img [src]="API + user.image" class="rounded-full object-cover"></ion-img>
+      </ion-thumbnail>
+      <ion-icon name="camera-outline" size="large" class="absolute bottom-0 -right-4"></ion-icon>
+    </label>
+    <input id="file" type="file" accept="image/*" class="hidden" (change)="changeImage($event)" />
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input color="secondary" formControlName="first_name"></ion-input>
+        <div class="error__messages" *ngIf="formValidator.isInvalid('first_name')">
+          <small *ngIf="form.get('first_name')?.hasError('required')">Campo requerido</small>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input color="secondary" formControlName="last_name"></ion-input>
+        <div class="error__messages" *ngIf="formValidator.isInvalid('last_name')">
+          <small *ngIf="form.get('last_name')?.hasError('required')">Campo requerido</small>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input color="secondary" formControlName="phone"></ion-input>
+        <div class="error__messages" *ngIf="formValidator.isInvalid('phone')">
+          <small *ngIf="form.get('phone')?.hasError('required')">Campo requerido</small>
+          <small *ngIf="form.get('phone').hasError('pattern')"> Formato inválido </small>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input color="secondary" formControlName="email"></ion-input>
+        <div class="error__messages" *ngIf="formValidator.isInvalid('email')">
+          <small *ngIf="form.get('email')?.hasError('required')">Campo requerido</small>
+          <small *ngIf="form.get('email')?.hasError('email')">Email no válido</small>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Rut</ion-label>
+        <ion-input color="secondary" formControlName="rut"></ion-input>
+        <div class="error__messages" *ngIf="formValidator.isInvalid('rut')">
+          <small *ngIf="form.get('rut')?.hasError('required')">Campo requerido</small>
+          <small *ngIf="form.get('rut').hasError('pattern')"> Formato inválido </small>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input color="secondary" formControlName="address"></ion-input>
+        <div class="error__messages" *ngIf="formValidator.isInvalid('address')">
+          <small *ngIf="form.get('address')?.hasError('required')">Campo requerido</small>
+        </div>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" class="mt-5" shape="round" strong>Aceptar</ion-button>
+    </form>
+  </ion-row>
+</ion-content>

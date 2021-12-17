@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-button (click)="_modal.dismiss()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="light" size="small">SEGUIMIENTO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="primary" class="text-center">
+    <ion-card-header>
+      <ion-card-title>DISTANCIA</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content> {{ distance }}m </ion-card-content>
+  </ion-card>
+
+  <app-take [subsdiary]="subsidiary"></app-take>
+</ion-content>

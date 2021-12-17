@@ -1,0 +1,14 @@
+<article class="bg-yellow-600 px-10 py-5 rounded-lg w-full mx-auto text-center max-w-screen-md shadow-lg">
+  <h3 class="text-lg">ÚLTIMOS MIEMBROS</h3>
+
+  <ul class="my-5 grid gap-4 auto-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <li class="flex flex-col items-center" *ngFor="let user of users">
+      <img [src]="API + user.image" alt="User Image" class="h-20 w-20 rounded-full" />
+      <a class="text-xs text-white uppercase" href="#">{{ user.first_name + " " + user.last_name }}</a>
+    </li>
+  </ul>
+
+  <div class="text-center">
+    <a class="text-blue-900 underline font-semibold" [routerLink]="['/usuarios']">Ver todos los usuarios</a>
+  </div>
+</article>
