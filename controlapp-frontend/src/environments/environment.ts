@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  API: 'http://localhost:8080/appasistencias/api/v1/',
-  BACKEND_BASE_URL: 'http://localhost:8080',
+  /*   API: 'http://localhost:8080/appasistencias/api/v1/',
+  BACKEND_BASE_URL: 'http://localhost:8080', */
   API_KEY_GM: '',
-  /*   API: 'https://web-app-asistencias.herokuapp.com/appasistencias/api/v1/',
-  BACKEND_BASE_URL: 'https://web-app-asistencias.herokuapp.com', */
+  API: 'https://web-app-asistencias.herokuapp.com/appasistencias/api/v1/',
+  BACKEND_BASE_URL: 'https://web-app-asistencias.herokuapp.com',
 };
 
 /*
